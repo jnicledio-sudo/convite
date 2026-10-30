@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#061d30">
+  <meta name="description" content="Convite para o jantar de celebração dos 50 anos de Armando Jomboce.">
+  <title>Armando Jomboce | 50 anos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="invite-page">
+  <main>
+    <section class="hero" aria-labelledby="invite-title">
+      <div class="hero-photo" role="img" aria-label="Fotografia de Armando Jomboce"></div>
+      <div class="hero-shade"></div>
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Convite especial">
+          <span class="brand-mark">50</span>
+          <span>CONVITE ESPECIAL</span>
+        </a>
+        <a class="admin-link" href="/admin.html">Área reservada <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <div class="hero-content">
+        <p class="eyebrow">Uma noite para celebrar</p>
+        <h1 id="invite-title">Armando<br>Jomboce</h1>
+        <p class="intro">50 anos de vida,<br>muitas histórias<br>e ainda mais por vir.</p>
+
+        <div class="age-block">
+          <span class="age-number">50</span>
+          <span class="age-label">ANOS</span>
+        </div>
+
+        <div class="event-details">
+          <div><span class="detail-icon">▦</span><span>27 de Dezembro de 2026</span></div>
+          <div><span class="detail-icon">◷</span><span>A partir das 22h</span></div>
+          <div><span class="detail-icon">⌖</span><span>Residência em Tsala, km 16</span></div>
+        </div>
+
+        <a class="gold-button hero-button" href="#confirmar">
+          <span aria-hidden="true">✳</span> Confirmar presença
+        </a>
+      </div>
+      <div class="hero-bottom-note">UMA DATA. UMA VIDA. MUITAS RAZÕES PARA CELEBRAR.</div>
+    </section>
+
+    <section class="rsvp-section" id="confirmar">
+      <div class="rsvp-card">
+        <p class="eyebrow dark-eyebrow">Será um prazer contar consigo</p>
+        <h2>Confirme a sua<br>presença</h2>
+        <p class="rsvp-copy">Para nos ajudar a organizar melhor o jantar, por favor, indique o seu nome completo.</p>
+        <form id="rsvp-form" class="rsvp-form">
+          <label class="sr-only" for="guest-name">O seu nome completo</label>
+          <div class="input-wrap">
+            <span aria-hidden="true">♙</span>
+            <input id="guest-name" name="name" type="text" maxlength="100" autocomplete="name" placeholder="O seu nome completo" required>
+          </div>
+          <input class="hp-field" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="primary-button" type="submit"><span aria-hidden="true">✓</span> Confirmar presença</button>
+          <p id="rsvp-feedback" class="form-feedback" role="status" aria-live="polite"></p>
+        </form>
+        <p class="thanks-note">Obrigado por fazer parte deste momento.</p>
+        <span class="small-gold-line"></span>
+      </div>
+      <footer class="site-footer">
+        <span class="footer-age">50</span>
+        <span>ARMAndo JOMBOCE · 27.12.2026</span>
+      </footer>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

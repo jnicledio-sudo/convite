@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#061d30">
+  <title>Painel administrativo | Armando Jomboce</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="admin-page">
+  <main class="admin-shell">
+    <header class="admin-topbar">
+      <a class="brand" href="/">
+        <span class="brand-mark">50</span>
+        <span>PAINEL ADMINISTRATIVO</span>
+      </a>
+      <a class="back-link" href="/">Voltar ao convite ↗</a>
+    </header>
+
+    <section id="login-view" class="login-card">
+      <div class="login-emblem">50</div>
+      <p class="eyebrow">Acesso reservado</p>
+      <h1>Painel Administrativo</h1>
+      <p class="login-copy">Introduza a senha para consultar as confirmações de presença.</p>
+      <form id="login-form">
+        <label class="sr-only" for="admin-password">Senha de acesso</label>
+        <div class="input-wrap dark-input">
+          <span aria-hidden="true">♙</span>
+          <input id="admin-password" type="password" placeholder="Senha de acesso" autocomplete="current-password" required>
+        </div>
+        <button class="gold-button login-button" type="submit">Entrar <span aria-hidden="true">→</span></button>
+        <p id="login-feedback" class="form-feedback" role="status" aria-live="polite"></p>
+      </form>
+      <p class="login-footnote">Acesso exclusivo ao responsável pelo convite.</p>
+    </section>
+
+    <section id="dashboard-view" class="dashboard" hidden>
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow dark-eyebrow">Gestão de convidados</p>
+          <h1>Lista de convidados</h1>
+        </div>
+        <button id="logout-button" class="logout-button" type="button">Sair ↗</button>
+      </div>
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span>Total de confirmações</span>
+          <strong id="guest-count">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Última actualização</span>
+          <strong id="last-updated">—</strong>
+        </article>
+      </div>
+      <div class="table-card">
+        <div class="table-heading">
+          <h2>Presenças confirmadas</h2>
+          <button id="refresh-button" class="refresh-button" type="button">Actualizar ↻</button>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Nome</th><th>Data da confirmação</th></tr></thead>
+            <tbody id="guest-list">
+              <tr><td colspan="2" class="empty-row">A carregar confirmações...</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="data-note">As confirmações ficam guardadas na base de dados. Este painel não disponibiliza opções para apagar registos.</p>
+        <p id="dashboard-feedback" class="form-feedback" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+  <script src="/admin.js"></script>
+</body>
+</html>
