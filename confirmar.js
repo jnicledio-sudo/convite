@@ -1,6 +1,3 @@
-const rsvpCard = document.querySelector("#rsvp-card");
-const successCard = document.querySelector("#rsvp-success-card");
-const confirmedNameEl = document.querySelector("#confirmed-guest-name");
 const form = document.querySelector("#rsvp-form");
 const feedback = document.querySelector("#rsvp-feedback");
 const nameInput = document.querySelector("#guest-name");
@@ -11,16 +8,15 @@ form?.addEventListener("submit", async (event) => {
   feedback.classList.remove("error");
 
   const name = nameInput.value.trim();
-  if (!name || name.length < 2) {
-    feedback.textContent = "Por favor, indique o seu nome completo (mínimo 2 letras).";
+  if (!name) {
+    feedback.textContent = "Por favor, indique o seu nome.";
     feedback.classList.add("error");
-    nameInput.focus();
     return;
   }
 
-  const button = form.querySelector("button[type='submit']");
+  const button = form.querySelector("button");
   button.disabled = true;
-  button.innerHTML = 'A confirmar...';
+  button.textContent = "A confirmar...";
 
   try {
     const response = await fetch("/api/rsvp", {
@@ -31,20 +27,16 @@ form?.addEventListener("submit", async (event) => {
         company: form.elements.company.value
       })
     });
-
     const result = await response.json();
-    if (!response.ok) {
-      throw new Error(result.error || "Não foi possível registar a sua confirmação.");
-    }
+    if (!response.ok) throw new Error(result.error || "Não foi possível guardar a confirmação.");
 
-    // Sucesso: alternar para o ecrã de celebração
-    confirmedNameEl.textContent = name;
-    rsvpCard.hidden = true;
-    successCard.hidden = false;
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    feedback.textContent = "Presença confirmada com sucesso. Obrigado!";
+    nameInput.value = "";
+    form.reset();
   } catch (error) {
-    feedback.textContent = error.message || "Ocorreu um erro ao comunicar com o servidor. Tente novamente.";
+    feedback.textContent = error.message || "Ocorreu um erro. Tente novamente.";
     feedback.classList.add("error");
+  } finally {
     button.disabled = false;
     button.innerHTML = '<span aria-hidden="true">✓</span> Confirmar presença';
   }
