@@ -8,19 +8,29 @@
   <title>Confirmar Presença | Armando Jomboce</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body class="confirm-page-light">
   <header class="confirm-light-topbar">
     <a class="back-link-dark" href="/">
-      <span aria-hidden="true">←</span> Voltar ao convite
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      <span>Voltar ao convite</span>
     </a>
     <a class="brand-light" href="/" aria-label="Convite Armando Jomboce">
       <span class="brand-mark-dark">50</span>
-      <span>ARMANDO JOMBOCE</span>
+      <span class="brand-light-text">Armando Jomboce</span>
     </a>
-    <a class="admin-link-dark" href="/admin.html">Área reservada <span aria-hidden="true">↗</span></a>
+    <a class="admin-link-dark" href="/admin.html">
+      <span>Área reservada</span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <line x1="7" y1="17" x2="17" y2="7"></line>
+        <polyline points="7 7 17 7 17 17"></polyline>
+      </svg>
+    </a>
   </header>
 
   <main class="rsvp-page-container">
@@ -32,11 +42,19 @@
       <form id="rsvp-form" class="rsvp-form">
         <label class="sr-only" for="guest-name">O seu nome completo</label>
         <div class="input-wrap">
-          <span aria-hidden="true">♙</span>
+          <svg class="input-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
           <input id="guest-name" name="name" type="text" maxlength="100" autocomplete="name" placeholder="O seu nome completo" required autofocus>
         </div>
         <input class="hp-field" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button class="primary-button" type="submit"><span aria-hidden="true">✓</span> Confirmar presença</button>
+        <button class="primary-button" type="submit">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Confirmar presença</span>
+        </button>
         <p id="rsvp-feedback" class="form-feedback" role="status" aria-live="polite"></p>
       </form>
 
