@@ -4,7 +4,11 @@ module.exports = async (req, res) => {
   if (req.method !== "POST") return json(res, 405, { error: "Método não permitido." });
 
   try {
-    const { name, company } = req.body || {};
+    let body = req.body;
+    if (typeof body === "string") {
+      try { body = JSON.parse(body); } catch {}
+    }
+    const { name, company } = body || {};
     // Campo-armadilha simples para reduzir envios automáticos.
     if (company) return json(res, 200, { ok: true });
     if (typeof name !== "string" || name.trim().length < 2 || name.trim().length > 100) {
