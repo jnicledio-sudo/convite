@@ -80,13 +80,13 @@ h1, h2 { font-family: var(--serif); font-weight: 600; }
   filter: drop-shadow(0 0 14px rgba(233, 189, 121, 0.7));
   line-height: 1;
 }
-.event-details { display: grid; gap: 14px; padding: 20px 0 24px; border-top: 1px solid rgba(233,189,121,.45); max-width: 390px; }
-.event-detail-item { display: flex; align-items: center; gap: 14px; }
+.event-details { display: grid; gap: 13px; padding: 18px 0 22px; border-top: 1px solid rgba(233,189,121,.45); max-width: 480px; }
+.event-detail-item { display: flex; align-items: center; gap: 13px; }
 .detail-icon-wrap { width: 24px; display: flex; align-items: center; justify-content: center; color: var(--gold); filter: drop-shadow(0 0 8px rgba(233, 189, 121, 0.55)); flex-shrink: 0; }
 .script-accent {
   font-family: var(--script);
-  font-size: clamp(23px, 2.5vw, 29px);
-  line-height: 1.2;
+  font-size: clamp(20px, 2.3vw, 26px);
+  line-height: 1.25;
   color: #fff9ea;
   letter-spacing: .02em;
   text-shadow: 0 0 12px rgba(233, 189, 121, 0.6), 0 0 22px rgba(233, 189, 121, 0.3);
@@ -188,8 +188,8 @@ td { color: #52697b; }
   .age-block { margin: 6px 0 16px; gap: 8px; }
   .age-number { font-size: 60px; }
   .age-label { font-size: 36px; }
-  .event-details { max-width: 100%; gap: 11px; padding: 16px 0 20px; }
-  .script-accent { font-size: 20px; }
+  .event-details { max-width: 100%; gap: 11px; padding: 15px 0 18px; }
+  .script-accent { font-size: 18px; line-height: 1.25; }
   .detail-icon-wrap svg { width: 18px; height: 18px; }
   .hero-button { font-size: 13px; }
   .hero-bottom-bar { flex-direction: column; gap: 6px; text-align: center; padding: 18px 20px; }
